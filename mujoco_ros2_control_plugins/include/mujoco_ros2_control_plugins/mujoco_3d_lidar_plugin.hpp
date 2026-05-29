@@ -34,9 +34,12 @@
 namespace mujoco_ros2_control_plugins
 {
 
+/**
+ * @brief Data container for lidar sensor information.
+ */
 struct Lidar3dConfig
 {
-  std::string name;  // The sensor's name in the underlying sim
+  std::string name;
   int sensor_id;
   int sensor_adr;
   int plugin_stateadr;
@@ -70,16 +73,12 @@ struct Lidar3dConfig
  * message and publish to the configured topic. Supports both 2-D and 3-D lidar
  * sensor configs, and will publish either LaserScan or PointCloud messages according
  * to the sensor type.
- *
- * TODO: Add more information when this is done
- *
  */
 class Mujoco3dLidarPlugin : public MuJoCoROS2ControlPluginBase
 {
 public:
   /**
    * @brief Initializes a new MujocoLidar wrapper object for 3d lidar sensors.
-   *
    *
    * @param node Will be used to construct laserscan publishers
    * @param model MuJoCo model for the simulation
@@ -89,6 +88,10 @@ public:
 
   /**
    * @brief Callback to update the plugin's data.
+   *
+   * Iterates over each lidar sensor and checks if new data is available. If not, this does
+   * nothing. If so, this will copy the sensor data into a relevant message type and
+   * publish it.
    */
   void update(const mjModel* model, mjData* data) override;
 
