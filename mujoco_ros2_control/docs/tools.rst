@@ -176,7 +176,7 @@ Main sub-elements
 
       Lidar is now implemented as a standalone MuJoCo sensor plugin (``mujoco.plugin.lidar``)
       and is no longer generated through ``processed_inputs``.
-      Refer to the documentation below and the :doc:`plugins documentation <plugins>` for details.
+      Refer to the :ref:`custom_mujoco_extensions` and the :ref:`mujoco_3d_lidar_plugin` plugin docs for additional details.
 
    Common processed tags (supported by the demo converter):
 

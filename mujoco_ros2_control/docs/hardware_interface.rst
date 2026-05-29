@@ -299,6 +299,15 @@ This allows camera topics to be published even when running in headless mode (e.
    EGL requires proper GPU drivers and EGL libraries to be installed (e.g., libegl1-mesa on Ubuntu).
    If both GLFW and EGL fail to initialize, camera publishing will be disabled with a warning.
 
+Lidar
+-----
+
+.. warning::
+
+  Lidar is now implemented as a standalone MuJoCo sensor plugin (``mujoco.plugin.lidar``).
+  It is no longer available in the base hardware interface.
+  Refer to the :ref:`custom_mujoco_extensions` and the :ref:`mujoco_3d_lidar_plugin` plugin docs for additional details.
+
 Simulation Topics and Services
 ================================
 

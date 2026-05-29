@@ -1,5 +1,7 @@
+.. _mujoco_ros2_control_plugins:
+
 MuJoCo ROS 2 Control Plugins
-=============================
+============================
 
 The ``mujoco_ros2_control_plugins`` package provides a plugin interface for extending the
 functionality of ``mujoco_ros2_control``.
@@ -217,6 +219,8 @@ Parameters
            type: "mujoco_ros2_control_plugins/ExternalWrenchPlugin"
            force_arrow_scale: 0.01      # 100 N  → 1 m arrow
            torque_arrow_scale: 0.1      # 10 N·m → 1 m arrow
+
+.. _mujoco_3d_lidar_plugin:
 
 MuJoCo 3D Lidar
 ~~~~~~~~~~~~~~~
