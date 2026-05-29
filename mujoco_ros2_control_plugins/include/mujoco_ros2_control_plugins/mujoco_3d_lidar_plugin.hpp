@@ -106,7 +106,7 @@ private:
    * @return true
    * @return false
    */
-  bool register_sensor(const mjModel* model, size_t sensor_idx);
+  bool register_sensor(const mjModel* model, int sensor_idx);
 
   rclcpp::Node::SharedPtr node_;
 

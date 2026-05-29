@@ -119,7 +119,7 @@ bool Mujoco3dLidarPlugin::init(rclcpp::Node::SharedPtr node, const mjModel* mode
   node_ = node;
   lidar_sensors_.clear();
 
-  for (size_t i = 0; i < model->nsensor; ++i)
+  for (int i = 0; i < model->nsensor; ++i)
   {
     // Skip sensors that aren't mujoco plugins
     if (model->sensor_type[i] != mjtSensor::mjSENS_PLUGIN)
@@ -150,7 +150,7 @@ bool Mujoco3dLidarPlugin::init(rclcpp::Node::SharedPtr node, const mjModel* mode
   return true;
 }
 
-bool Mujoco3dLidarPlugin::register_sensor(const mjModel* model, size_t sensor_idx)
+bool Mujoco3dLidarPlugin::register_sensor(const mjModel* model, int sensor_idx)
 {
   const auto sensor_name = mj_id2name(model, mjtObj::mjOBJ_SENSOR, sensor_idx);
   if (!sensor_name)
@@ -287,7 +287,7 @@ bool Mujoco3dLidarPlugin::register_sensor(const mjModel* model, size_t sensor_id
   return true;
 }
 
-void Mujoco3dLidarPlugin::update(const mjModel* model, mjData* data)
+void Mujoco3dLidarPlugin::update(const mjModel* /* model */, mjData* data)
 {
   for (Lidar3dConfig& lidar : lidar_sensors_)
   {
