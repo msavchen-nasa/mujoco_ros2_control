@@ -30,11 +30,6 @@
       <joint joint1="gripper_left_finger_joint" joint2="gripper_right_finger_joint" polycoef="0 -1 0 0 0" solimp="0.95 0.99 0.001" solref="0.005 1"/>
     </equality>
 
-    <!-- TODO: Remove when we replace lidar -->
-    <sensor>
-      <rangefinder name="lidar" site="rf" />
-    </sensor>
-
     <!-- 2-D Lidar Sensor, published at 10 hz -->
     <extension>
       <plugin plugin="mujoco.plugin.lidar">

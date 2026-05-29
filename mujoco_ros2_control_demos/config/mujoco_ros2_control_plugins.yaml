@@ -4,3 +4,11 @@
       heart_beat_plugin:
         type: "mujoco_ros2_control_plugins/HeartbeatPublisherPlugin"
         update_rate: 1.0
+      mujoco_3d_lidar_plugin:
+        type: "mujoco_ros2_control_plugins/Mujoco3dLidarPlugin"
+        2d_lidar:
+          frame_name: "lidar_sensor_frame"
+          topic: "/lidar_scan_2d"
+        3d_lidar:
+          frame_name: "3d_lidar_sensor_frame"
+          topic: "/lidar_points_3d"

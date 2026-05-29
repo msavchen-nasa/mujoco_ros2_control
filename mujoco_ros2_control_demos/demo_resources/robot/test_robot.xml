@@ -44,11 +44,6 @@
     <site name="base" pos="0 0 0" quat="1.0 0 0 0"/>
     <site name="lidar_sensor_frame" pos="1.0 2.0 0" quat="0.7071054825112363 0 0 -0.7071080798594737"/>
     <site name="3d_lidar_sensor_frame" pos="1.0 -2.0 0" quat="0.7071054825112363 0 0 0.7071080798594737"/>
-    <body name="lidar_sensor_frame_lidar_body" pos="1.0 2.0 0" quat="0.6991665401770936 0.6991665401770936 -0.10567000093116563 -0.10567000093116563">
-      <replicate site="lidar_sensor_frame" count="24" sep="-" offset="0 0 0" euler="0 0.025 0">
-        <site name="rf" pos="0.0 0.0 0.0" quat="0.0 0.0 0.0 1.0"/>
-      </replicate>
-    </body>
   </worldbody>
   <option integrator="implicitfast"/>
   <default>
@@ -73,9 +68,6 @@
   <equality>
     <joint joint1="gripper_left_finger_joint" joint2="gripper_right_finger_joint" polycoef="0 -1 0 0 0" solimp="0.95 0.99 0.001" solref="0.005 1"/>
   </equality>
-  <sensor>
-    <rangefinder name="lidar" site="rf"/>
-  </sensor>
   <extension>
     <plugin plugin="mujoco.plugin.lidar">
       <instance name="2d_lidar">
