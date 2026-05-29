@@ -172,7 +172,7 @@ Main sub-elements
    Use these when the converter must transform or generate MJCF elements (for example,
    cameras, mesh decomposition hints, or targeted modifications).
 
-   .. note::
+   .. warning::
 
       Lidar is now implemented as a standalone MuJoCo sensor plugin (``mujoco.plugin.lidar``)
       and is no longer generated through ``processed_inputs``.
